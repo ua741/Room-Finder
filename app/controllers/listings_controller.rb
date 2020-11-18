@@ -65,7 +65,7 @@ class ListingsController < ApplicationController
       @listing.user_id= session[:user_id]
       respond_to do |format|
           if @listing.save
-            @client = GooglePlaces::Client.new('AIzaSyCzlX9Hndc6BZlHpLVkk8S_xRGOsnA_cJ4')
+            @client = GooglePlaces::Client.new('invalid_key')
             @arr=[@listing.latitude, @listing.longitude]
             @vv=@client.spots(@arr[0], @arr[1])
                   @vv.each do |t|
